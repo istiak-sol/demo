@@ -1,14 +1,190 @@
 {
-  "posts": [
-    { "id": 1, "title": "Post 1" },
-    { "id": 2, "title": "Post 2" },
-    { "id": 3, "title": "Post 3" }
+  "domains": [
+     {
+    "name": "Sample Order Checking Version",
+    "rootDomainId": "6063565d-fa4c-4805-a067-22bc6909073f",
+    "description": "This is a sample domain description.",
+    "version": {
+        "key": "1",
+        "full": "1.2",
+        "major": 1,
+        "minor": 2
+    },
+    "status": "active",
+    "published": "false",
+    "owner": "owner-id",
+    "ownerInfo": {
+        "name": "John Doe",
+        "email": "john.doe@example.com",
+        "phone": "111111111111"
+    },
+    "attributes": [
+        {
+            "id": "1",
+            "parentId": "0",
+            "name": "id",
+            "datatype": "text",
+            "description": "The ID number of the order.",
+            "note": "Items in the order",
+            "ruleDefaults": {
+                "conflictRule": "LWW",
+                "systemReadAccess": "yes",
+                "systemWriteAccess": "yes"
+            },
+            "updatesIncrementRecordVersion": true,
+            "searchable": true,
+            "customerIdentifier": true,
+            "status": "active",
+            "order": 1,
+            "attributes": []
+        },
+        {
+            "id": "2",
+            "parentId": "0",
+            "name": "name",
+            "datatype": "text",
+            "description": "The name of the order",
+            "note": "",
+            "ruleDefaults": {
+                "conflictRule": "LWW",
+                "systemReadAccess": "yes",
+                "systemWriteAccess": "yes"
+            },
+            "updatesIncrementRecordVersion": true,
+            "searchable": true,
+            "customerIdentifier": true,
+            "status": "active",
+            "order": 2,
+            "attributes": []
+        },
+        {
+            "id": "3",
+            "parentId": "0",
+            "name": "description",
+            "datatype": "text",
+            "description": "Enter Node Description",
+            "note": "",
+            "ruleDefaults": {
+                "conflictRule": "LWW",
+                "systemReadAccess": "yes",
+                "systemWriteAccess": "yes"
+            },
+            "updatesIncrementRecordVersion": false,
+            "searchable": true,
+            "customerIdentifier": true,
+            "status": "active",
+            "order": 3,
+            "attributes": []
+        },
+        {
+            "id": "4",
+            "parentId": "0",
+            "name": "salesItems",
+            "datatype": "array",
+            "description": "Enter Node Description",
+            "note": "You note here",
+            "ruleDefaults": {
+                "conflictRule": "LWW",
+                "systemReadAccess": "yes",
+                "systemWriteAccess": "yes"
+            },
+            "updatesIncrementRecordVersion": false,
+            "searchable": false,
+            "customerIdentifier": false,
+            "status": "active",
+            "order": 4,
+            "attributes": [
+                {
+                    "id": "5",
+                    "parentId": "4",
+                    "name": "id",
+                    "datatype": "number",
+                    "description": "Enter Attribute Description",
+                    "note": "You note here",
+                    "ruleDefaults": {
+                        "conflictRule": "LWW",
+                        "systemReadAccess": "yes",
+                        "systemWriteAccess": "yes"
+                    },
+                    "updatesIncrementRecordVersion": false,
+                    "searchable": true,
+                    "customerIdentifier": true,
+                    "status": "active",
+                    "order": 1,
+                    "attributes": []
+                },
+                {
+                    "id": "6",
+                    "parentId": "4",
+                    "name": "name",
+                    "datatype": "number",
+                    "description": "Enter Attribute Description",
+                    "note": "You note here",
+                    "ruleDefaults": {
+                        "conflictRule": "LWW",
+                        "systemReadAccess": "yes",
+                        "systemWriteAccess": "yes"
+                    },
+                    "updatesIncrementRecordVersion": false,
+                    "searchable": true,
+                    "customerIdentifier": true,
+                    "status": "active",
+                    "order": 2,
+                    "attributes": []
+                },
+                {
+                    "id": "7",
+                    "parentId": "4",
+                    "name": "price",
+                    "datatype": "number",
+                    "description": "Enter Attribute Description",
+                    "note": "You note here",
+                    "ruleDefaults": {
+                        "conflictRule": "LWW",
+                        "systemReadAccess": "yes",
+                        "systemWriteAccess": "yes"
+                    },
+                    "updatesIncrementRecordVersion": false,
+                    "searchable": true,
+                    "customerIdentifier": true,
+                    "status": "active",
+                    "order": 3,
+                    "attributes": []
+                }
+            ]
+        }
+    ],
+    "governance": {
+        "defaults": {
+            "policies": {
+                "conflictRule": "LWW",
+                "systemReadAccess": "yes",
+                "systemWriteAccess": "yes"
+            }
+        },
+        "systemPolicyOverrides": [
+            {
+                "system": "da57a82e-291c-4051-b79d-d248a2935523",
+                "policies": {
+                    "conflictRule": "FWW",
+                    "systemReadAccess": "yes",
+                    "systemWriteAccess": "yes"
+                },
+                "attributePolicyOverrides": [
+                    {
+                        "attribute": "1",
+                        "policies": {
+                            "conflictRule": "ROW",
+                            "systemReadAccess": "yes",
+                            "systemWriteAccess": "yes"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "audit": [],
+    "created": 1723043155243
+}
   ],
-  "comments": [
-    { "id": 1, "body": "some comment", "postId": 1 },
-    { "id": 2, "body": "some comment", "postId": 1 }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
 }
